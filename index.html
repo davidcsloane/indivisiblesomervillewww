@@ -7,7 +7,6 @@ https://www.w3schools.com/html/tryit.asp?filename=tryhtml_layout_flexbox >
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Indivisible Somerville</title>
   <style>
 * {
   box-sizing: border-box;
@@ -39,15 +38,18 @@ footer {
   text-align: center;
   color: white;
 }
-
-/* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
-@media (max-width: 600px) {
-  section {
-    -webkit-flex-direction: column;
-    flex-direction: column;
-  }
+logo {
+  max-width: 10%;
+  height: auto;
 }
+/* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
+section {
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+
 </style>
+<title><img id="logo" src="Indivisible_Somerville_Modern_Powderhouse_Logo_595x600.png" alt="Indivisible Somerville MA Logo" style="vertical-align:middle">Indivisible Somerville</title>
 </head>
 <body>
   <header>
