@@ -17,12 +17,12 @@ jobs:
     steps:
       - name: git-checkout
         uses: actions/checkout@v2
+      # Commenting out npm steps since we're not using npm
+      # - name: Install all dependencies
+      #   run: npm i
 
-      - name: Install all dependencies
-        run: npm i
-
-      - name: Build
-        run: npm run build
+      # - name: Build
+      #   run: npm run build
 
       - name: Pull Existing GitHub Pages branch
         run: git clone -b gh-pages https://${{ env.GITHUB_TOKEN }}@<Your Repository Link> existing-gh-pages-folder
