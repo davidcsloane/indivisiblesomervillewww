@@ -1,0 +1,44 @@
+# .github/workflows/publish-pull-request-to-preview-link.yaml
+# from https://blog.devesh.tech/post/using-github-actions-with-github-pages-to-publish-preview-builds as of 2025.07.14
+name: Build Pull Request and Push it to Preview Link
+
+on:
+  pull_request:
+    branches:
+      - main # Only run this on PRs to the main branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Build and Push
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_PR_NUMBER: ${{ github.event.pull_request.number }}
+    steps:
+      - name: git-checkout
+        uses: actions/checkout@v2
+
+      - name: Install all dependencies
+        run: npm i
+
+      - name: Build
+        run: npm run build
+
+      - name: Pull Existing GitHub Pages branch
+        run: git clone -b gh-pages https://${{ env.GITHUB_TOKEN }}@<Your Repository Link> existing-gh-pages-folder
+
+      - name: Create PR's subfolder and move PR Build to it
+        run: |
+          rm -rf existing-gh-pages-folder/${{ env.GITHUB_PR_NUMBER }}
+          mkdir existing-gh-pages-folder/${{ env.GITHUB_PR_NUMBER }}
+          cp build/* existing-gh-pages-folder/${{ env.GITHUB_PR_NUMBER }}
+          rm -rf existing-gh-pages-folder/.git
+
+      - name: Push to GitHub Pages Branch
+        uses: s0/git-publish-subdir-action@develop
+        env:
+          REPO: self
+          BRANCH: gh-pages
+          FOLDER: existing-gh-pages-folder
+          GITHUB_TOKEN: ${{ env.GITHUB_TOKEN }}
+          MESSAGE: "Build: ({sha}) {msg}"
