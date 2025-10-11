@@ -1,37 +1,48 @@
 <!DOCTYPE html>
-<! styling / layout based on 
-https://www.w3schools.com/html/tryit.asp?filename=tryhtml_layout_flexbox >
-<! colors from https://brandfolder.com/indivisibleproject/group-support# >
 <html lang="en">
+<!-- styling / layout based on https://www.w3schools.com/html/tryit.asp?filename=tryhtml_layout_flexbox -->
+<!-- colors from https://brandfolder.com/indivisibleproject/group-support# -->
 <head>
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:site_name" content="Indivisible Somerville">
+  <meta property="og:url" content="https://indivisiblesomerville.org/">
+  <meta property="og:title" content="Indivisible Somerville">
+  <meta name="og:description" content="Indivisible Somerville is an activist group based in Somerville, Massachusetts, working to support democracy and oppose authoritarianism. Join us!">
+  <meta property="og:image" content="https://www.indivisiblesomerville.org/Indivisible_Somerville_Modern_Powderhouse_Logo_200x202.png">
+  <meta name="description" content="Indivisible Somerville is an activist group based in Somerville, Massachusetts, working to support democracy and oppose authoritarianism. Join us!">
+  
+  <meta name="MobileOptimized" content="width">
+  <meta name="HandheldFriendly" content="true">
   <style>
-* {
-  box-sizing: border-box;
-}
+    /* try removing box-sizing
+  * {
+    box-sizing: border-box;
+  }
+    */
 
 body {
   font-family: Arial, Helvetica, sans-serif;
   text-align: left;
+  ul.space_list li { margin-bottom: 1em; };
 }
 
-/* Style the header */
-header {
+/* Style the header using pageheader ID to distinguish this from subsequent EA form header elements */
+#pageheader {
   background-color: #6C9FC2;
   padding: 30px;
   text-align: center;
-  /* font-size: 35px; removed to try and fix mobile/desktop sizing issue*/
   color: white;
 }
 
-/* Container for flexboxes */
+/* Container for flexboxes  - try disabling it 
 section {
   display: -webkit-flex;
   display: flex;
   text-align: left;
 }
+*/
 
 /* Style the footer */
 footer {
@@ -45,11 +56,15 @@ footer {
   max-width: 20%;
   height: auto;
 }
-/* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
+/* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other 
+Removed max-width: 600px to try and fix wide/desktop signup-form layout. That made it worse.
+Switching max-width to 1440px didn't help - might have busted the syntax.
+*/
+//
 @media (max-width: 600px) {
   section {
-    -webkit-flex-direction: column;
-    flex-direction: column;
+    /*-webkit-flex-direction: column; */
+    /* flex-direction: column; */
     text-align: left;
   }
 } 
@@ -58,40 +73,50 @@ footer {
 <title>Indivisible Somerville</title>
 </head>
 <body>
-  <header>
+  <header id="pageheader">
     <h1 id="welcome"><img class="logo" src="Indivisible_Somerville_Modern_Powderhouse_Logo_595x600.png" 
                        alt="Indivisible Somerville MA Logo" style="vertical-align:middle"> Indivisible Somerville</h1>
   </header>
-  <section>
+  <div>
     <p>Indivisible Somerville opposes the Trump agenda. We began as a group of local activists, 
     and have recently formed an Indivisible group, organizing folks in Somerville, Massachusetts and the surrounding communities. 
     We strive to be inclusive and collaborative.</p>
-  </section>
+  </div>
   <section>
     <h2 id="contact">Connect with Indivisible Somerville</h2>
   </section>
-  <section>
-      <ul>
-        <li><a href="https://www.mobilize.us/indivisiblesomerville/">Sign Up for Events</a></li>
+  
+  <div>
+      <ul class=space_list>
+        <li><a href="https://www.mobilize.us/indivisiblesomerville/?org_ids=42543">Sign Up for Events</a></li>
+
         <li><a href="https://bsky.app/profile/indivisiblesville.bsky.social">Indivisible Somerville on BlueSky</a></li>
+        
         <li><a href="https://www.facebook.com/Indivisiville">Indivisible Somerville on Facebook</a></li>
-          
+        
+        <li><a href="https://www.instagram.com/indivisiblesomerville_v2.0">Indivisible Somerville on Instagram</a></li>
+        
         <li>Email: info a<span>&#8203;</span>t indivisible<span>&#8203;</span>somerville<span>&#8203;</span>.o<span>&#8203;</span>rg</li>
-        <! ^ extra non-printing characters added to break up the email address to foil screen scrapers>
+        <!-- ^ extra non-printing characters added to break up the email address to foil screen scrapers -->
+ 
         <li><a href="https://secure.actblue.com/donate/indivisiblesom1336255410">Indivisible Somerville ActBlue Support Page</a></li>
+        
+        <li><a href="https://secure.everyaction.com/p/Rw74aDS6HEybcsFa2o9pcw2">Manage Your Indivisible Somerville Settings</a></li>
+        
       </ul>
-  </section>
+    </div>
+  
   <section>
     <h2 id="affiliates">Affiliated Organizations</h2>
   </section>
   <section>
-    <ul>
+    <ul class=space_list>
       <li><a href="https://indivisible.org">Indivisible (national)</a></li>
       <li><a href="https://indivisible-ma.org/">Indivisible Massachusetts Coalition</a></li>
     </ul>
   </section>
   
-  <section>
+  <div>
        <link rel='preload' href='https://static.everyaction.com/ea-actiontag/at.js' as='script' crossorigin='anonymous'>
        <link rel='preload' href='https://static.everyaction.com/ea-actiontag/at.min.css' as='style'>
        <script type='text/javascript' src='https://static.everyaction.com/ea-actiontag/at.js' crossorigin='anonymous'></script>
@@ -104,6 +129,6 @@ footer {
        data-fastaction-nologin="true"
             data-mobile-autofocus="false">
     </div>
-  </section>
+  </div>
 </body>
 </html>
