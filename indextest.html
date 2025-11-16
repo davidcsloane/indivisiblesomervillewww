@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- styling / layout based on 
+https://www.w3schools.com/html/tryit.asp?filename=tryhtml_layout_flexbox 
+colors from https://brandfolder.com/indivisibleproject/group-support# 
+-->
+<head>
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:site_name" content="Indivisible Somerville">
+  <meta property="og:url" content="https://indivisiblesomerville.org/">
+  <meta property="og:title" content="Indivisible Somerville">
+  <meta name="og:description" content="Indivisible Somerville is an activist group based in Somerville, Massachusetts, working to support democracy and oppose authoritarianism. Join us!">
+  <meta property="og:image" content="https://www.indivisiblesomerville.org/Indivisible_Somerville_Modern_Powderhouse_Logo_200x202.png">
+  <meta name="description" content="Indivisible Somerville is an activist group based in Somerville, Massachusetts, working to support democracy and oppose authoritarianism. Join us!">
+  
+  <meta name="MobileOptimized" content="width">
+  <meta name="HandheldFriendly" content="true">
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: left;
+      ul.space_list li { margin-bottom: 1em; };
+    }
+
+    /* Style the header using pageheader ID to distinguish this from subsequent EA form header elements */
+    #pageheader {
+      background-color: #6C9FC2;
+      padding: 30px;
+      text-align: center;
+      color: white;
+    }
+    /* Style the footer */
+    footer {
+      padding: 10px;
+      text-align: center;
+      color: white;
+    }
+    .logo {
+      min-width: 120px;
+      max-width: 20%;
+      height: auto;
+    }
+    /* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other - may be unnecessary?
+    */
+
+    @media (max-width: 600px) {
+      section {
+        text-align: left;
+      }
+    } 
+</style>
+<title>Indivisible Somerville</title>
+
+
+</head>
+<body>
+  <header id="pageheader">
+    <h1 id="welcome"><img class="logo" src="Indivisible_Somerville_Modern_Powderhouse_Logo_595x600.png" 
+                       alt="Indivisible Somerville MA Logo" style="vertical-align:middle"> Indivisible Somerville</h1>
+  </header>
+  <div>
+    <p>Indivisible is a grassroots movement of thousands of local Indivisible groups with a mission to elect progressive leaders, rebuild our democracy, and defeat the Trump agenda. Indivisible Somerville is a local chapter group that was relaunched in spring 2025. We are a group of volunteers working to oppose the Trump agenda through electoral campaigns and direct actions.
+   </p>
+  </div>
+  <section>
+    <h2 id="contact">Connect with Indivisible Somerville</h2>
+  
+    <div>
+      <ul class=space_list>
+        <li><a href="https://www.mobilize.us/indivisiblesomerville/?org_ids=42543">Sign Up for Events</a></li>
+     
+        <li>Email: info a<span>&#8203;</span>t indivisible<span>&#8203;</span>somerville<span>&#8203;</span>.o<span>&#8203;</span>rg</li>
+        <!-- ^ extra non-printing characters added to break up the email address to foil screen scrapers -->
+ 
+        <li><a href="https://secure.actblue.com/donate/indivisiblesom1336255410">Indivisible Somerville ActBlue Support Page</a></li>
+        
+        <li><a href="https://secure.everyaction.com/p/Rw74aDS6HEybcsFa2o9pcw2">Manage Your Indivisible Somerville Settings</a></li>
+      </ul>
+    </div>
+    <h3>Socials</h3>
+    <div>
+      <!--add non-breaking spaces to indent the social logos-->
+        &nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://bsky.app/profile/indivisiblesville.bsky.social"><img src="Bluesky_Logo.svg" alt="Indivisible Somerville on BlueSky" width="40"></a>
+        <!--add non-breaking spaces to separate the social logos-->
+        &nbsp;&nbsp;
+        <a href="https://www.facebook.com/Indivisiville"><img src="Facebook_f_logo_(2019).svg" alt="Indivisible Somerville on Facebook" width="40"></a>
+        <!--add non-breaking spaces to separate the social logos-->
+        &nbsp;&nbsp;
+        <a href="https://www.instagram.com/indivisiblesomerville_v2.0"><img src="Instagram_logo_2022.svg" alt="Indivisible Somerville on Instagram" width="40"></a>
+      </div>
+
+  </section>
+  <section>
+    <h2 id="affiliates">Affiliated Organizations</h2>
+
+    <ul class=space_list>
+      <li><a href="https://indivisible.org">Indivisible (national)</a></li>
+      <li><a href="https://indivisible-ma.org/">Indivisible Massachusetts Coalition</a></li>
+    </ul>
+  </section>
+  
+  <div>
+       <link rel='preload' href='https://static.everyaction.com/ea-actiontag/at.js' as='script' crossorigin='anonymous'>
+       <link rel='preload' href='https://static.everyaction.com/ea-actiontag/at.min.css' as='style'>
+       <script type='text/javascript' src='https://static.everyaction.com/ea-actiontag/at.js' crossorigin='anonymous'></script>
+       <link rel='preload' href='https://nvlupin.blob.core.windows.net/designs/CustomStylesheet_739ecb02b88cac6707d8eb4f3eb5aeffb3bee6daa3d5aeca79b2cbd8b3949a36.css' as='style'>
+       <div class="ngp-form"
+       data-form-url="https://secure.everyaction.com/v1/Forms/oSZ11hIYTEaBjlYhMP_MEQ2"
+               data-custom-css='https://nvlupin.blob.core.windows.net/designs/CustomStylesheet_739ecb02b88cac6707d8eb4f3eb5aeffb3bee6daa3d5aeca79b2cbd8b3949a36.css'
+       data-fastaction-endpoint="https://fastaction.ngpvan.com"
+       data-inline-errors="true"
+       data-fastaction-nologin="true"
+            data-mobile-autofocus="false">
+    </div>
+  </div>
+<footer>
+</footer>
+</body>
+</html>
