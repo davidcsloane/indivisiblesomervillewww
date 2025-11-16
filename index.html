@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- colors from https://brandfolder.com/indivisibleproject/group-support# -->
+<!-- styling / layout based on 
+https://www.w3schools.com/html/tryit.asp?filename=tryhtml_layout_flexbox 
+colors from https://brandfolder.com/indivisibleproject/group-support# 
+-->
 <head>
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
   <meta charset="utf-8">
@@ -15,45 +18,42 @@
   <meta name="MobileOptimized" content="width">
   <meta name="HandheldFriendly" content="true">
   <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: left;
+      ul.space_list li { margin-bottom: 1em; };
+    }
 
+    /* Style the header using pageheader ID to distinguish this from subsequent EA form header elements */
+    #pageheader {
+      background-color: #6C9FC2;
+      padding: 30px;
+      text-align: center;
+      color: white;
+    }
+    /* Style the footer */
+    footer {
+      padding: 10px;
+      text-align: center;
+      color: white;
+    }
+    .logo {
+      min-width: 120px;
+      max-width: 20%;
+      height: auto;
+    }
+    /* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other - may be unnecessary?
+    */
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: left;
-  ul.space_list li { margin-bottom: 1em; };
-}
-
-/* Style the header using pageheader ID to distinguish this from subsequent EA form header elements */
-#pageheader {
-  background-color: #6C9FC2;
-  padding: 30px;
-  text-align: center;
-  color: white;
-}
-
-
-/* Style the footer */
-footer {
-  padding: 10px;
-  text-align: center;
-  color: white;
-}
-.logo {
-  min-width: 120px;
-  max-width: 20%;
-  height: auto;
-}
-/* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other - may be unnecessary?
-*/
-
-@media (max-width: 600px) {
-  section {
-    text-align: left;
-  }
-} 
+    @media (max-width: 600px) {
+      section {
+        text-align: left;
+      }
+    } 
 </style>
-  
 <title>Indivisible Somerville</title>
+
+
 </head>
 <body>
   <header id="pageheader">
