@@ -1,0 +1,4 @@
+---
+
+exclude: 
+  - "./indextest.html"
