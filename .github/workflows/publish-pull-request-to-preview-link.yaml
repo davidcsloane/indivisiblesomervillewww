@@ -25,7 +25,7 @@ jobs:
       #   run: npm run build
 
       - name: Pull Existing GitHub Pages branch
-        run: git clone -b gh-pages https://${{ env.GITHUB_TOKEN }}@github.com/davidcsloane/indivisiblesomervillewww.git existing-gh-pages-folder
+        run: git clone -b gh-pages https://${{ env.GITHUB_TOKEN }}@github.com/davidcsloane/indivisiblesomervillewww existing-gh-pages-folder
 
       - name: Create PR's subfolder and move PR Build to it
         run: |
