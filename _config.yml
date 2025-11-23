@@ -1,0 +1,5 @@
+url: "https://www.indivisiblesomerville.org"
+
+exclude: 
+  - "indextest.html"
+  - "readme.md"
