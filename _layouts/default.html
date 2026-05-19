@@ -9,7 +9,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
 		<link rel="stylesheet" href="{{ site.baseurl }}/css/screen.css">
 		<link rel="apple-touch-icon" sizes="180x180" href="{{ site.baseurl }}/apple-touch-icon.png">
-		<link rel="icon" type="image/png" href="{{ site.baseurl }}/favicon.png" sizes="32x32">
+		<link rel="icon" type="image/x-icon" href="{{ site.baseurl }}/assets/images/favicon.ico">
 
 		{% if jekyll.environment == 'production' and site.google_analytics_key != '' %}
 			<script>
@@ -24,13 +24,17 @@
 		<nav>
 			<div class="container">
 				<a href="{{ site.baseurl }}">{% include logo.html %}</a>
+				<div class="nav-links">
+					<a href="https://www.mobilize.us/indivisiblesomerville/">Events</a>
+					<a href="{{ site.baseurl }}/about">About</a>
+					<a class="nav-donate" href="https://secure.actblue.com/donate/indivisiblesom1336255410">Donate</a>
+				</div>
 			</div>
 		</nav>
 		<div class="content">
 			{{ content }}
 		</div>
 		<footer>
-			<p class="editor-link" style="margin-bottom: 20px;"><a href="cloudcannon:collections/_data/company.yml" class="btn"><strong>&#9998;</strong> Update footer</a></p>
 			<div class="container">
 				<div class="about">
 					<p>{{ site.data.company.mission_statement }}</p>
@@ -47,31 +51,21 @@
 							{% include icons/footer.html icon="email" %} {{ site.data.company.email }}
 						</a>
 					</p>
-					<p class="phone">
-						<a href="tel:{{ site.data.company.phone | replace: ' ', '-' }}">
-							{% include icons/footer.html icon="phone" %} {{ site.data.company.phone }}
-						</a>
-					</p>
 				</div>
 
 				<div class="sharing">
+					<a class="bluesky" href="https://bsky.app/profile/{{ site.data.company.bluesky }}">
+						{% include icons/social-media.html social_icon="bluesky" %}
+					</a>
 					<a class="facebook" href="https://www.facebook.com/{{ site.data.company.facebook }}">
 						{% include icons/social-media.html social_icon="facebook" %}
 					</a>
-					<a class="twitter" href="https://twitter.com/{{ site.data.company.twitter }}">
-						{% include icons/social-media.html social_icon="twitter" %}
-					</a>
-					<a class="youtube" href="https://youtube.com/{{ site.data.company.youtube }}">
-						{% include icons/social-media.html social_icon="youtube" %}
+					<a class="instagram" href="https://www.instagram.com/{{ site.data.company.instagram }}">
+						{% include icons/social-media.html social_icon="instagram" %}
 					</a>
 				</div>
 			</div>
 		</footer>
-		<p class="copyright">
-			<a href="https://cloudcannon.com/">
-				Template by CloudCannon
-			</a>
-		</p>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 		<script type="text/javascript">
 			$('a[href*=\\#]').on('click', function(event){

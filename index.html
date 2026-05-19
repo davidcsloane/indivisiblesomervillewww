@@ -1,44 +1,44 @@
 ---
 layout: default
-title: The Sheep Vote
+title: Indivisible Somerville
 ---
 <header>
 	<div class="container">
 		<div class="column">
 			<div>
-				<h1 class="editable">Give sheep the vote</h1>
-				<p class="editable">Sheep are the backbone of the economy yet they receive no compensation.</p>
+				<h1>Oppose the Trump Agenda</h1>
+				<p>Indivisible Somerville is a grassroots group of volunteers in Somerville, MA working to support democracy and oppose authoritarianism through electoral campaigns and direct action.</p>
 				<div class="button">
-					<a href="#donate">Donate Now</a>
+					<a href="https://www.mobilize.us/indivisiblesomerville/?org_ids=42543">Get Involved</a>
 				</div>
 			</div>
 		</div>
 		<div class="column">
-			<img src="{{ site.baseurl }}/images/sheep.jpg" alt="Sheep">
+			<img src="{{ site.baseurl }}/assets/images/Indivisible_Somerville_Modern_Powderhouse_Logo_595x600.png" alt="Indivisible Somerville">
 		</div>
 	</div>
 </header>
 
 <div class="container">
-	<h2 class="editable" style="text-align: center;">Why sheep need the vote</h2>
+	<h2>How You Can Help</h2>
 
 	<ul class="thirds">
 		<li>
 			<div class="image">{% include icons/site.html icon="population" %}</div>
-			<h3 class="editable">Population</h3>
-			<p class="editable">New Zealand has a human population of just 4.5M while there are 70M sheep. </p>
+			<h3>Take Action</h3>
+			<p>Attend events, make phone calls, write postcards, and show up for democracy in your community.</p>
 		</li>
 
 		<li>
 			<div class="image">{% include icons/site.html icon="economy" %}</div>
-			<h3 class="editable">Economy</h3>
-			<p class="editable">Sheep are the backbone of the economy yet they receive no compensation.</p>
+			<h3>Build Community</h3>
+			<p>Connect with neighbors who share your values and work together to create real change in Somerville and beyond.</p>
 		</li>
 
 		<li>
 			<div class="image">{% include icons/site.html icon="conditions" %}</div>
-			<h3 class="editable">Work Conditions</h3>
-			<p class="editable">Sheep are forced to eat grass every day of their life. How about some of variety?</p>
+			<h3>Support Democracy</h3>
+			<p>Help elect progressive candidates and hold elected officials accountable to their constituents.</p>
 		</li>
 	</ul>
 </div>
@@ -46,64 +46,54 @@ title: The Sheep Vote
 <div class="container">
 	<div class="columns">
 		<div>
-			<img src="{{ site.baseurl }}/images/sheep2.jpg" alt="Sheep">
+			<img src="{{ site.baseurl }}/assets/images/Indivisible_Somerville_Modern_Powderhouse_Glacier_Logo_595x600.webp" alt="Indivisible Somerville">
 		</div>
 		<div>
-			<h2 class="editable">Our Mission</h2>
-
-			<p class="editable">Leave no sheep behind. Our mission to give sheep the right to vote and have them represented in parliament. For too long sheep have been exploited for their warm wool and delicious meat. It's time to put our hooves down and baa for what's right. Give sheep the vote!</p>
+			<h2>Our Mission</h2>
+			<p>Indivisible is a grassroots movement of thousands of local groups with a mission to elect progressive leaders, rebuild our democracy, and defeat the Trump agenda.</p>
+			<p>Indivisible Somerville is a local chapter relaunched in spring 2025. We are a group of volunteers working to oppose the Trump agenda through electoral campaigns and direct actions.</p>
 		</div>
 	</div>
 </div>
 
-<div class="container">
-	<hr>
-	<blockquote>
-		<p class="quote editable">The ultimate measure of a sheep is not where he stands in moments of comfort and convenience, but where he stands at times of challenge and controversy.</p>
-		<div class="attribute">
-			<p class="meta">
-				<span class="image"><img class="editable" src="{{ site.baseurl }}/images/wooly.jpg" alt="Wooly"></span>
-				<span class="author editable"><strong>Wooly McBaa</strong></span>
-			</p>
-		</div>
-	</blockquote>
-</div>
-
 <div class="darker">
 	<div class="container">
-		<h2 class="editable">Join us</h2>
-		<p class="editable" style="text-align: center;">Sign up to hear the latest news and progress in our fight for the sheep vote.</p>
-		<form action="{{ site.newsletter_action }}" method="post">
-			<input type="text" name="EMAIL" placeholder="Email">
-			<input type="submit" value="Sign up"/>
-		</form>
+		<h2>Join Indivisible Somerville</h2>
+		<p style="text-align: center;">Sign up to stay informed about local actions, events, and campaigns.</p>
+		<div style="text-align: center; margin-top: 30px;">
+			<div class="button">
+				<a href="{{ site.everyaction_signup_url }}">Sign Up</a>
+			</div>
+		</div>
 	</div>
 </div>
 
 <div class="container" id="donate">
-	<h2 class="editable">Make a donation</h2>
-	<div class="donate">
-		{{ site.donation_embed }}
+	<h2>Support Our Work</h2>
+	<p style="text-align: center;">Your donation helps fund Indivisible Somerville's organizing efforts.</p>
+	<div class="donate" style="margin-top: 20px;">
+		<div class="button">
+			<a href="{{ site.actblue_url }}">Donate on ActBlue</a>
+		</div>
 	</div>
 </div>
 
+{% if site.posts.size > 0 %}
 <div class="darker">
 	<div class="container">
-		<h2 class="editable">Updates</h2>
-		<p class="editor-link"><a href="cloudcannon:collections/_posts" class="btn"><strong>&#9998;</strong> Add Update</a></p>
+		<h2>Updates</h2>
 		<div class="posts">
 			{% for post in site.posts %}
 				<div class="post">
-					<div class="image" style="background-image: url({{ post.featured_image}})"></div>
+					<div class="image" style="background-image: url({{ post.featured_image }})"></div>
 					<div class="post-content">
 						<p class="date">{{ post.date | date: '%B %d, %Y' }}</p>
 						<h3>{{ post.title }}</h3>
-
 						{{ post.content }}
-						<p class="editor-link"><a href="cloudcannon:collections/{{ post.path }}" class="btn"><strong>&#9998;</strong> Edit Update</a></p>
 					</div>
 				</div>
 			{% endfor %}
 		</div>
 	</div>
 </div>
+{% endif %}

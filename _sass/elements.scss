@@ -63,7 +63,6 @@ form {
 		width: 100%;
 		border: 1px solid #ddd;
 
-
 		&, &:focus {
 			border-top-left-radius: 30px;
 			border-bottom-left-radius: 30px;
@@ -80,7 +79,7 @@ form {
 		border-bottom-right-radius: 30px;
 
 		&:hover {
-			background: darken($brand-color, 5%);
+			background: #257345;
 		}
 	}
 }
@@ -107,6 +106,6 @@ form {
 	transition: 200ms ease-in background;
 
 	&:hover {
-		background: darken($brand-color, 5%);
+		background: #257345;
 	}
 }

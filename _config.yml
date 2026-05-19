@@ -1,22 +1,23 @@
 # ----
 # Site
 
-title: Cause Template
-url: https://clean-oryx.cloudvent.net
+title: Indivisible Somerville
+url: https://www.indivisiblesomerville.org
 baseurl:
 google_analytics_key:
 
 # Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
-logo: /siteicon.png
-description: Jekyll template with example content for a not-for-profit organisation.
+logo: /assets/images/is_ind_logo.png
+description: Indivisible Somerville is an activist group based in Somerville, Massachusetts, working to support democracy and oppose authoritarianism. Join us!
 author:
-  name:
-  email:
-  twitter: # twitter username without the @ symbol
+  name: Indivisible Somerville
+  email: info@indivisiblesomerville.org
 social:
-  name: Cause Template
+  name: Indivisible Somerville
   links:
-    - https://github.com/CloudCannon/cause-jekyll-template
+    - https://bsky.app/profile/indivisiblesville.bsky.social
+    - https://www.facebook.com/Indivisiville
+    - https://www.instagram.com/indivisiblesomerville_v2.0
 
 # -----
 # Build
@@ -52,8 +53,8 @@ defaults:
     values:
       layout: "default"
 
-donation_embed: '<script src="https://donorbox.org/widget.js" type="text/javascript"></script><iframe src="https://donorbox.org/embed/give-sheep-the-vote?hide_donation_meter=true" height="685px" width="100%" style="max-width:425px; min-width:310px" seamless="seamless" id="dbox-form-embed" name="donorbox" frameborder="0" scrolling="no"></iframe>'
-newsletter_action: "//your-mailchimp-action-url.com"
+actblue_url: "https://secure.actblue.com/donate/indivisiblesom1336255410"
+everyaction_signup_url: "https://secure.everyaction.com/p/Rw74aDS6HEybcsFa2o9pcw2"
 
 plugins:
   - jekyll-sitemap
@@ -62,8 +63,9 @@ plugins:
 exclude:
   - Gemfile
   - Gemfile.lock
-  - README.md
-  - LICENCE
+  - readme.md
+  - LICENSE
+  - CLAUDE.md
 
 # -----------
 # CloudCannon
