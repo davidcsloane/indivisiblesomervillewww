@@ -14,34 +14,18 @@ header {
 	background-position: center;
 	padding: 70px 0;
 
-	h1, h2, h3 {
+	h2, h3 {
 		color: white;
 	}
 
 	h1 {
+		color: #cccccc;
 		font-family: 'Montserrat', sans-serif;
-		font-weight: 700;
+		font-weight: 900;
 	}
 
 	p {
 		color: rgba(255, 255, 255, 0.82);
-	}
-
-	@media #{$desktop} {
-		.container {
-			display: flex;
-		}
-
-		.column {
-			flex: 1;
-
-			&:first-child {
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				margin-right: 50px;
-			}
-		}
 	}
 }
 
