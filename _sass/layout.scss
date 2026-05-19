@@ -406,48 +406,53 @@ footer {
 
 // Upcoming Events section
 .upcoming-events {
-	background: #fff;
+	background: #f9f9f9;
+	padding: 60px 0 80px;
 }
 
 .upcoming-events-header {
 	display: flex;
 	align-items: flex-start;
 	justify-content: space-between;
-	margin-bottom: 32px;
+	margin-bottom: 36px;
 }
 
 .upcoming-events-title {
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 900;
-	font-size: 2em;
-	color: $brand-color;
+	font-size: 48px;
+	line-height: 1.05;
+	color: #086699;
 	text-align: left;
-	margin: 0 0 6px;
+	margin: 0 0 10px;
 }
 
 .upcoming-events-sub {
 	font-family: 'Domine', serif;
-	font-size: 17px;
-	color: #555;
+	font-size: 20px;
+	color: #000;
 	margin: 0;
 }
 
 .events-view-all {
 	font-family: 'Montserrat', sans-serif;
-	font-size: 14px;
-	font-weight: 600;
-	color: #777;
+	font-size: 18px;
+	font-weight: 500;
+	color: #000;
 	text-decoration: none;
 	white-space: nowrap;
-	padding-top: 8px;
+	padding-top: 14px;
+	display: flex;
+	align-items: center;
+	gap: 6px;
 
-	&:hover { color: #333; }
+	&:hover { text-decoration: underline; }
 }
 
 .events-grid {
 	display: grid;
 	grid-template-columns: 1fr;
-	gap: 24px;
+	gap: 28px;
 
 	@media #{$desktop} {
 		grid-template-columns: repeat(3, 1fr);
@@ -467,21 +472,22 @@ footer {
 
 .event-card {
 	background: #fff;
-	border: 1px solid #e4e4e4;
-	border-radius: 8px;
+	border-radius: 4px;
 	overflow: hidden;
 	display: flex;
 	flex-direction: column;
+	box-shadow: 0 4px 20px rgba(221, 221, 221, 0.6);
 
 	.event-card-img {
-		height: 180px;
+		height: 200px;
 		background-size: cover;
 		background-position: center;
-		background-color: #dde3ea;
+		background-color: #c8d4de;
+		flex-shrink: 0;
 	}
 
 	.event-card-body {
-		padding: 16px 20px 20px;
+		padding: 20px 24px 24px;
 		display: flex;
 		flex-direction: column;
 		flex: 1;
@@ -489,64 +495,60 @@ footer {
 
 	.event-badge {
 		display: inline-block;
-		padding: 3px 10px;
-		border-radius: 20px;
+		padding: 5px 20px;
+		border-radius: 10px;
+		background: $navy;
+		color: #cccccc;
 		font-family: 'Montserrat', sans-serif;
-		font-size: 11px;
-		font-weight: 700;
-		text-transform: uppercase;
-		letter-spacing: 0.05em;
-		margin-bottom: 10px;
+		font-size: 14px;
+		font-weight: 500;
+		margin-bottom: 12px;
 		align-self: flex-start;
-
-		&.event-badge--today { background: $brand-color; color: #fff; }
-		&.event-badge--date { background: #7a5c00; color: #fff; }
-		&.event-badge--recurring { background: $navy; color: #fff; }
 	}
 
 	.event-title {
 		font-family: 'Montserrat', sans-serif;
-		font-weight: 700;
-		font-size: 1.15em;
-		color: #222;
+		font-weight: 500;
+		font-size: 26px;
+		line-height: 1.2;
+		color: #000;
 		margin: 0 0 10px;
 		text-align: left;
 	}
 
 	.event-desc {
 		font-family: 'Domine', serif;
-		font-size: 14px;
-		color: #666;
+		font-size: 15px;
+		color: $navy;
 		line-height: 1.55;
-		margin: 0 0 16px;
+		margin: 0 0 20px;
 		flex: 1;
 	}
 
 	.event-actions {
 		display: flex;
-		gap: 10px;
+		gap: 12px;
 	}
 
 	.event-btn {
 		font-family: 'Montserrat', sans-serif;
-		font-weight: 700;
-		font-size: 11px;
-		letter-spacing: 0.06em;
+		font-weight: 500;
+		font-size: 15px;
 		text-transform: uppercase;
 		text-decoration: none;
-		padding: 8px 16px;
-		border-radius: 5px;
+		padding: 7px 20px;
+		border-radius: 12px;
 
 		&.event-btn-primary {
 			background: $brand-color;
-			color: #fff;
+			color: #cccccc;
 			&:hover { background: #2a6518; }
 		}
 
 		&.event-btn-secondary {
-			background: #e8e8e8;
-			color: #555;
-			&:hover { background: #d0d0d0; }
+			background: transparent;
+			color: $navy;
+			&:hover { text-decoration: underline; }
 		}
 	}
 }
