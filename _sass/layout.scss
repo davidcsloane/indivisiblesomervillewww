@@ -404,6 +404,78 @@ footer {
 	padding: 60px 0;
 }
 
+// "Indivisible in Somerville" section
+.about-split {
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+
+	@media #{$desktop} {
+		flex-direction: row;
+		gap: 60px;
+		align-items: flex-start;
+
+		.about-photos,
+		.about-text {
+			flex: 1;
+		}
+	}
+}
+
+.about-photos {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+
+	.photo-top-row {
+		display: flex;
+		gap: 6px;
+
+		img {
+			flex: 1;
+			width: 50%;
+			height: 220px;
+			object-fit: cover;
+			display: block;
+		}
+	}
+
+	.photo-bottom-row {
+		img {
+			width: 100%;
+			height: 190px;
+			object-fit: cover;
+			display: block;
+		}
+	}
+}
+
+.about-heading {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 900;
+	font-size: 36px;
+	line-height: 1.1;
+	letter-spacing: -0.2px;
+	text-transform: uppercase;
+	color: $navy;
+	text-align: left;
+	margin-bottom: 20px;
+}
+
+.about-text {
+	p {
+		font-family: 'Domine', serif;
+		font-size: 17px;
+		color: #444;
+		line-height: 1.6;
+		margin-bottom: 16px;
+	}
+
+	a {
+		color: $brand-color;
+	}
+}
+
 // Volunteer page
 .vol-hero {
 	background: $navy;
