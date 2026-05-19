@@ -9,10 +9,18 @@
 
 header {
 	background: $navy;
-	padding-bottom: 50px;
+	background-image: url('/assets/images/banner-map.png');
+	background-size: cover;
+	background-position: center;
+	padding: 70px 0;
 
 	h1, h2, h3 {
 		color: white;
+	}
+
+	h1 {
+		font-family: 'Montserrat', sans-serif;
+		font-weight: 700;
 	}
 
 	p {
@@ -27,11 +35,6 @@ header {
 		.column {
 			flex: 1;
 
-			img {
-				max-width: none;
-				width: 120%;
-			}
-
 			&:first-child {
 				display: flex;
 				justify-content: center;
@@ -39,12 +42,6 @@ header {
 				margin-right: 50px;
 			}
 		}
-	}
-
-	img {
-		margin: 60px auto 0 auto;
-		display: block;
-		max-width: 100%;
 	}
 }
 
