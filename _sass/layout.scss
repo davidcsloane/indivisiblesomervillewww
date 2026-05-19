@@ -57,7 +57,7 @@ header, nav {
 
 nav {
 	background: $navy;
-	padding: 15px 0;
+	padding: 18px 0;
 
 	.container {
 		display: flex;
@@ -65,10 +65,52 @@ nav {
 		justify-content: space-between;
 	}
 
-	img {
-		height: 45px;
-		width: auto;
-		display: block;
+	a {
+		text-decoration: none;
+	}
+
+	.nav-brand {
+		display: flex;
+		align-items: center;
+		gap: 14px;
+
+		.nav-logo-img {
+			width: 42px;
+			height: 42px;
+			object-fit: contain;
+			display: block;
+		}
+
+		.nav-separator {
+			width: 1px;
+			height: 42px;
+			background: rgba(255, 255, 255, 0.35);
+			flex-shrink: 0;
+		}
+
+		.nav-brand-text {
+			display: flex;
+			flex-direction: column;
+			gap: 2px;
+		}
+
+		.nav-brand-name {
+			font-family: 'Montserrat', sans-serif;
+			font-weight: 700;
+			font-size: 26px;
+			letter-spacing: -0.2px;
+			color: #fff;
+			line-height: 1;
+		}
+
+		.nav-brand-location {
+			font-family: 'Montserrat', sans-serif;
+			font-weight: 700;
+			font-size: 18px;
+			letter-spacing: -0.2px;
+			color: rgba(255, 255, 255, 0.85);
+			line-height: 1;
+		}
 	}
 
 	.nav-links {
@@ -77,9 +119,12 @@ nav {
 		gap: 25px;
 
 		a {
+			font-family: 'Montserrat', sans-serif;
+			font-weight: 500;
+			font-size: 18px;
+			letter-spacing: -0.09px;
 			color: rgba(255, 255, 255, 0.9);
 			text-decoration: none;
-			font-size: 0.95em;
 
 			&:hover {
 				color: #fff;
@@ -88,13 +133,13 @@ nav {
 
 		.nav-donate {
 			background: $brand-color;
-			padding: 8px 22px;
-			border-radius: 20px;
-			font-weight: bold;
+			padding: 10px 22px;
+			border-radius: 12px;
+			font-weight: 700;
 			color: #fff;
 
 			&:hover {
-				background: #257345;
+				background: #2a6518;
 				color: #fff;
 			}
 		}
@@ -376,4 +421,172 @@ footer {
 .darker {
 	background: #f8fafb;
 	padding: 60px 0;
+}
+
+// Volunteer page
+.vol-hero {
+	background: $navy;
+	padding: 80px 0 70px;
+
+	.container {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+
+	.vol-hero-title {
+		font-family: 'Montserrat', sans-serif;
+		font-weight: 900;
+		font-size: 52px;
+		letter-spacing: -0.3px;
+		color: #fff;
+		line-height: 1.1;
+		text-align: left;
+		margin: 0 0 24px;
+	}
+
+	.vol-hero-sub {
+		font-family: 'Domine', serif;
+		font-size: 20px;
+		color: rgba(255, 255, 255, 0.85);
+		line-height: 1.5;
+		max-width: 680px;
+	}
+}
+
+.vol-section {
+	.container {
+		padding-top: 60px;
+		padding-bottom: 60px;
+	}
+}
+
+.vol-heading {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+	font-size: 36px;
+	letter-spacing: -0.2px;
+	text-transform: uppercase;
+	text-align: left;
+	color: $navy;
+	margin-bottom: 24px;
+}
+
+.vol-body {
+	font-family: 'Domine', serif;
+	font-size: 20px;
+	color: #444;
+	line-height: 1.5;
+	margin-bottom: 20px;
+
+	a {
+		color: $brand-color;
+	}
+}
+
+.vol-steps {
+	list-style: decimal;
+	padding-left: 1.5em;
+	margin: 24px 0 30px;
+
+	li {
+		font-family: 'Domine', serif;
+		font-size: 20px;
+		color: #444;
+		line-height: 1.5;
+		margin-bottom: 10px;
+	}
+}
+
+.working-groups {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+	gap: 24px;
+	margin-top: 40px;
+
+	.wg-card {
+		background: #fff;
+		border: 1px solid #dde3ea;
+		border-radius: 8px;
+		padding: 28px;
+
+		h3 {
+			font-family: 'Montserrat', sans-serif;
+			font-weight: 900;
+			font-size: 16px;
+			letter-spacing: 0.05em;
+			text-transform: uppercase;
+			color: $navy;
+			margin: 0 0 12px;
+		}
+
+		p {
+			font-family: 'Domine', serif;
+			font-size: 16px;
+			color: #555;
+			line-height: 1.5;
+			margin: 0;
+		}
+	}
+}
+
+// Newsletter feed
+.newsletter-feed {
+	max-width: 720px;
+	margin: 0 auto;
+
+	.newsletter-entry {
+		padding: 40px 0;
+		border-bottom: 1px solid #e4e8ed;
+
+		&:last-child {
+			border-bottom: none;
+		}
+
+		.newsletter-meta {
+			margin-bottom: 10px;
+		}
+
+		.newsletter-date {
+			font-family: 'Montserrat', sans-serif;
+			font-weight: 700;
+			font-size: 13px;
+			letter-spacing: 0.08em;
+			text-transform: uppercase;
+			color: $navy;
+		}
+
+		.newsletter-title {
+			font-family: 'Montserrat', sans-serif;
+			font-weight: 700;
+			font-size: 24px;
+			color: #222;
+			margin: 0 0 16px;
+			text-align: left;
+		}
+
+		.newsletter-image {
+			width: 100%;
+			border-radius: 6px;
+			margin-bottom: 20px;
+		}
+
+		.newsletter-body {
+			font-family: 'Domine', serif;
+			font-size: 18px;
+			color: #444;
+			line-height: 1.6;
+
+			p {
+				font-family: 'Domine', serif;
+				font-size: 18px;
+				color: #444;
+				line-height: 1.6;
+				margin-bottom: 16px;
+			}
+
+			a {
+				color: $brand-color;
+			}
+		}
+	}
 }

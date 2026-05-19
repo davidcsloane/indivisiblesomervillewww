@@ -1,0 +1,29 @@
+---
+layout: default
+title: Newsletter
+---
+<section>
+	<div class="container">
+		<h2>Newsletter</h2>
+		{% if site.posts.size > 0 %}
+			<div class="newsletter-feed">
+				{% for post in site.posts %}
+					<article class="newsletter-entry">
+						<div class="newsletter-meta">
+							<span class="newsletter-date">{{ post.date | date: '%b %-d, %Y' }}{% if post.time %} &ndash; {{ post.time }}{% endif %}</span>
+						</div>
+						{% if post.featured_image %}
+							<img src="{{ post.featured_image }}" alt="{{ post.title }}" class="newsletter-image">
+						{% endif %}
+						<h3 class="newsletter-title">{{ post.title }}</h3>
+						<div class="newsletter-body">
+							{{ post.content }}
+						</div>
+					</article>
+				{% endfor %}
+			</div>
+		{% else %}
+			<p>No posts yet. Check back soon!</p>
+		{% endif %}
+	</div>
+</section>
