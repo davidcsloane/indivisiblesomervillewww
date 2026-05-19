@@ -582,6 +582,83 @@ footer {
 	}
 }
 
+// "Since Fall 2025" stats section
+.since-fall {
+	position: relative;
+	overflow: hidden;
+	background-image: url('/assets/images/since-fall-bg.png');
+	background-size: cover;
+	background-position: center;
+
+	&::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: rgba(45, 95, 20, 0.80);
+	}
+
+	.container {
+		position: relative;
+		z-index: 1;
+		text-align: center;
+	}
+}
+
+.since-fall-title {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 900;
+	font-size: 1.8em;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	color: #fff;
+	margin: 0 0 40px;
+}
+
+.since-fall-stats {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 40px;
+
+	@media #{$desktop} {
+		flex-direction: row;
+		justify-content: center;
+		gap: 100px;
+	}
+
+	.stat {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 6px;
+
+		img {
+			width: 80px;
+			height: 80px;
+			object-fit: contain;
+		}
+
+		.stat-number {
+			font-family: 'Montserrat', sans-serif;
+			font-weight: 900;
+			font-size: 3.5em;
+			color: #fff;
+			line-height: 1;
+			margin: 4px 0 0;
+		}
+
+		.stat-label {
+			font-family: 'Montserrat', sans-serif;
+			font-weight: 700;
+			font-size: 0.72em;
+			text-transform: uppercase;
+			letter-spacing: 1.5px;
+			color: rgba(255, 255, 255, 0.9);
+			line-height: 1.4;
+		}
+	}
+}
+
 // Newsletter feed
 .newsletter-feed {
 	max-width: 720px;
