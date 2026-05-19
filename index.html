@@ -52,6 +52,87 @@ title: Indivisible Somerville
 	</div>
 </div>
 
+<div class="darker">
+	<div class="container">
+		<h2>Upcoming Events</h2>
+		<p class="events-subtitle">Check out our upcoming events!</p>
+		<div id="events-list" class="events-list">
+			<p class="events-loading">Loading events…</p>
+		</div>
+		<div class="events-footer">
+			<a href="https://www.mobilize.us/indivisiblesomerville/" class="events-view-all">View all events →</a>
+		</div>
+	</div>
+</div>
+
+<script>
+(function () {
+	var container = document.getElementById('events-list');
+
+	function esc(s) {
+		return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+	}
+
+	function stripHtml(s) {
+		return s.replace(/<[^>]*>/g, '');
+	}
+
+	function fmtDate(ts) {
+		return new Date(ts * 1000).toLocaleDateString('en-US', {
+			month: 'short', day: 'numeric', year: 'numeric', timeZone: 'America/New_York'
+		});
+	}
+
+	function fmtTime(ts) {
+		return new Date(ts * 1000).toLocaleTimeString('en-US', {
+			hour: 'numeric', minute: '2-digit', timeZone: 'America/New_York'
+		});
+	}
+
+	var now = Math.floor(Date.now() / 1000);
+	var url = 'https://api.mobilize.us/v1/organizations/42543/events'
+		+ '?per_page=3&visibility=PUBLIC&timeslot_start=gte_' + now;
+
+	fetch(url)
+		.then(function (r) { return r.json(); })
+		.then(function (data) {
+			var events = (data.data || []).filter(function (ev) { return ev.visibility === 'PUBLIC'; });
+			if (!events.length) {
+				container.innerHTML = '<p class="events-empty">No upcoming events. <a href="https://www.mobilize.us/indivisiblesomerville/">Check back soon.</a></p>';
+				return;
+			}
+			container.innerHTML = events.map(function (ev) {
+				var slot = ev.timeslots && ev.timeslots[0];
+				var dateStr = slot ? esc(fmtDate(slot.start_date)) : '';
+				var timeStr = slot ? esc(fmtTime(slot.start_date)) : '';
+				var loc = ev.location;
+				var locStr = ev.is_virtual ? 'Virtual'
+					: loc ? [loc.venue, loc.address_lines && loc.address_lines[0], loc.locality].filter(Boolean).map(esc).join(', ')
+					: '';
+				var desc = ev.description ? stripHtml(ev.description) : '';
+				if (desc.length > 150) desc = desc.substring(0, 150) + '…';
+				var eventUrl = 'https://www.mobilize.us/indivisiblesomerville/event/' + ev.id + '/';
+				return '<div class="event-card">'
+					+ '<div class="event-meta">'
+					+ (dateStr ? '<span class="event-date">' + dateStr + '</span>' : '')
+					+ (timeStr ? '<span class="event-time">' + timeStr + '</span>' : '')
+					+ '</div>'
+					+ '<h3 class="event-title">' + esc(ev.title) + '</h3>'
+					+ (locStr ? '<div class="event-location">' + locStr + '</div>' : '')
+					+ (desc ? '<p class="event-desc">' + esc(desc) + '</p>' : '')
+					+ '<div class="event-actions">'
+					+ '<a href="' + esc(eventUrl) + '" class="event-btn event-btn-primary">Sign Up</a>'
+					+ '<a href="' + esc(eventUrl) + '" class="event-btn event-btn-secondary">Details</a>'
+					+ '</div>'
+					+ '</div>';
+			}).join('');
+		})
+		.catch(function () {
+			container.innerHTML = '<p class="events-empty">Unable to load events. <a href="https://www.mobilize.us/indivisiblesomerville/">View all events on Mobilize.</a></p>';
+		});
+})();
+</script>
+
 {% if site.posts.size > 0 %}
 <div class="darker">
 	<div class="container">

@@ -404,6 +404,136 @@ footer {
 	padding: 60px 0;
 }
 
+// Upcoming events section
+.events-subtitle {
+	text-align: center;
+	font-family: 'Domine', serif;
+	font-size: 17px;
+	color: #555;
+	margin: -10px 0 32px;
+}
+
+.events-list {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.events-loading,
+.events-empty {
+	text-align: center;
+	color: #888;
+	padding: 40px 0;
+	font-family: 'Domine', serif;
+
+	a {
+		color: $brand-color;
+	}
+}
+
+.event-card {
+	background: #fff;
+	border: 1px solid #dde3ea;
+	border-radius: 8px;
+	padding: 24px 28px;
+
+	.event-meta {
+		display: flex;
+		gap: 12px;
+		align-items: baseline;
+		margin-bottom: 6px;
+	}
+
+	.event-date {
+		font-family: 'Montserrat', sans-serif;
+		font-weight: 700;
+		font-size: 12px;
+		letter-spacing: 0.07em;
+		text-transform: uppercase;
+		color: $navy;
+	}
+
+	.event-time {
+		font-family: 'Domine', serif;
+		font-size: 14px;
+		color: #777;
+	}
+
+	.event-title {
+		font-family: 'Montserrat', sans-serif;
+		font-weight: 700;
+		font-size: 20px;
+		color: #222;
+		margin: 0 0 8px;
+	}
+
+	.event-location {
+		font-family: 'Domine', serif;
+		font-size: 14px;
+		color: #777;
+		margin-bottom: 10px;
+	}
+
+	.event-desc {
+		font-family: 'Domine', serif;
+		font-size: 15px;
+		color: #555;
+		line-height: 1.55;
+		margin-bottom: 18px;
+	}
+
+	.event-actions {
+		display: flex;
+		gap: 10px;
+		flex-wrap: wrap;
+	}
+
+	.event-btn {
+		font-family: 'Montserrat', sans-serif;
+		font-weight: 700;
+		font-size: 12px;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		text-decoration: none;
+		padding: 9px 20px;
+		border-radius: 6px;
+		transition: background 0.15s, color 0.15s;
+
+		&.event-btn-primary {
+			background: $brand-color;
+			color: #fff;
+
+			&:hover { background: #2a6518; }
+		}
+
+		&.event-btn-secondary {
+			background: transparent;
+			color: $navy;
+			border: 2px solid $navy;
+
+			&:hover {
+				background: $navy;
+				color: #fff;
+			}
+		}
+	}
+}
+
+.events-footer {
+	text-align: center;
+	margin-top: 28px;
+
+	.events-view-all {
+		font-family: 'Montserrat', sans-serif;
+		font-weight: 600;
+		font-size: 15px;
+		color: $navy;
+		text-decoration: none;
+
+		&:hover { text-decoration: underline; }
+	}
+}
+
 // "Indivisible in Somerville" section
 .about-split {
 	display: flex;
