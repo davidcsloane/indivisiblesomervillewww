@@ -36,36 +36,59 @@
 		<div class="content">
 			{{ content }}
 		</div>
-		<footer>
-			<div class="container">
-				<div class="about">
-					<p>{{ site.data.company.mission_statement }}</p>
-				</div>
+		<footer class="site-footer">
+			<div class="footer-inner">
+				<h2 class="footer-title">
+					<span class="footer-title-word">INDIVISIBLE</span>
+					<span class="footer-star" aria-hidden="true">
+						<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l2.939 6.95L22 9.787l-5.5 4.794L18.18 22 12 18.27 5.82 22l1.68-7.42L2 9.787l7.061-.837L12 2z"/></svg>
+					</span>
+					<span class="footer-title-word">SOMERVILLE</span>
+				</h2>
+				<p class="footer-sub">Follow us on social media or subscribe to our news letter</p>
 
-				<div class="contact">
-					<address>
-						<a href="https://www.google.com/maps/place/{{ site.data.company.address | url_encode }}">
-							{% include icons/footer.html icon="place" %} {{ site.data.company.address }}
-						</a>
-					</address>
-					<p class="email">
-						<a href="mailto:{{ site.data.company.email }}">
-							{% include icons/footer.html icon="email" %} {{ site.data.company.email }}
-						</a>
-					</p>
-				</div>
-
-				<div class="sharing">
-					<a class="bluesky" href="https://bsky.app/profile/{{ site.data.company.bluesky }}">
-						{% include icons/social-media.html social_icon="bluesky" %}
+				<div class="footer-socials">
+					<a class="footer-social-icon" href="https://www.mobilize.us/indivisiblesomerville/" aria-label="Mobilize">
+						<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 4v16h3v-9.6l3.8 5.4h.4L15 10.4V20h3V4h-2.8L12 9.2 8.8 4H4z"/></svg>
 					</a>
-					<a class="facebook" href="https://www.facebook.com/{{ site.data.company.facebook }}">
-						{% include icons/social-media.html social_icon="facebook" %}
-					</a>
-					<a class="instagram" href="https://www.instagram.com/{{ site.data.company.instagram }}">
+					<a class="footer-social-icon" href="https://www.instagram.com/{{ site.data.company.instagram }}" aria-label="Instagram">
 						{% include icons/social-media.html social_icon="instagram" %}
 					</a>
+					<a class="footer-social-icon" href="https://www.facebook.com/{{ site.data.company.facebook }}" aria-label="Facebook">
+						{% include icons/social-media.html social_icon="facebook" %}
+					</a>
+					<a class="footer-social-icon" href="https://bsky.app/profile/{{ site.data.company.bluesky }}" aria-label="Bluesky">
+						{% include icons/social-media.html social_icon="bluesky" %}
+					</a>
+					<a class="footer-social-icon" href="mailto:{{ site.data.company.email }}" aria-label="Email">
+						{% include icons/social-media.html social_icon="email" %}
+					</a>
 				</div>
+
+				<div class="site-map">
+					<h3 class="site-map-title">SITE MAP</h3>
+					<div class="site-map-cols">
+						<div class="site-map-col">
+							<a href="{{ site.actblue_url }}">DONATE</a>
+							<a href="{{ site.baseurl }}/newsletter">NEWSLETTER</a>
+							<a href="mailto:{{ site.data.company.email }}">CONTACT US</a>
+							<a href="https://indivisible-ma.org/">INDIVISIBLE MASS COALITION</a>
+						</div>
+						<div class="site-map-col">
+							<a href="https://www.mobilize.us/indivisiblesomerville/">EVENTS</a>
+							<a href="{{ site.baseurl }}/volunteers">VOLUNTEER</a>
+							<a href="#">RESOURCES</a>
+						</div>
+					</div>
+				</div>
+
+				<p class="footer-cc">
+					<svg class="cc-mark" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+						<circle cx="12" cy="12" r="11" fill="none" stroke="currentColor" stroke-width="1.5"/>
+						<text x="12" y="16" text-anchor="middle" font-family="serif" font-size="11" font-weight="bold" fill="currentColor">cc</text>
+					</svg>
+					Creative Commons BY-NC - Indivisible Somerville, a local chapter of Indivisible.
+				</p>
 			</div>
 		</footer>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
