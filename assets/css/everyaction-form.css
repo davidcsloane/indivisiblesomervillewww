@@ -1,10 +1,36 @@
-/* Lay out Name, Email, and Submit on a single horizontal row.
-   EveryAction's at.js renders fields as .at-row inside a .at-fieldset,
-   with the submit button in its own row below. */
+/* EveryAction inline form — horizontal layout + cleanup
+   Uploaded to EveryAction blob storage as CustomCssUrl.
+   Applies on both the standalone form page and via at.js embed. */
 
-.at-form,
-.at-fieldset,
-.ContactInformation {
+/* --- Hide unwanted chrome --- */
+header.at-title,
+.at-title { display: none !important; }
+
+.at-markup.HeaderHtml,
+.at-markup.FooterHtml,
+footer.at-markup.FooterHtml { display: none !important; }
+
+/* FastAction autofill "Not [name]?" widget */
+.at-markup.FastAction,
+.fastaction-block { display: none !important; }
+
+/* "Update my profile" checkbox row */
+.at-row.UpdateMyProfile,
+.at-mode-person-only { display: none !important; }
+
+.at-error-console { display: none !important; }
+
+footer.form-footer.at,
+.form-footer { display: none !important; }
+
+/* Fieldset legend */
+.at-fieldset legend,
+.at-legend { display: none !important; }
+
+/* --- Horizontal layout --- */
+
+/* form.clearfix is the real <form> element — make it a flex row */
+form.clearfix {
     display: flex !important;
     flex-direction: row !important;
     flex-wrap: wrap !important;
@@ -12,28 +38,65 @@
     gap: 12px !important;
 }
 
-.at-form .at-row,
-.at-fieldset .at-row,
-.ContactInformation .at-row {
-    flex: 1 1 0 !important;
-    min-width: 180px !important;
+/* Fieldset grows to fill space; strip border/padding EveryAction adds */
+fieldset.at-fieldset {
+    flex: 1 1 auto !important;
+    border: none !important;
+    padding: 0 !important;
     margin: 0 !important;
+    min-width: 0 !important;
 }
 
-/* Make sure inputs fill their flex column */
-.at-form .at-row input,
-.at-fieldset .at-row input,
-.ContactInformation .at-row input {
+/* .at-fields is the div that wraps the individual field rows */
+.at-fields {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    align-items: flex-end !important;
+    gap: 12px !important;
+}
+
+/* Each field: grow equally, minimum so they wrap on small screens */
+.at-row {
+    flex: 1 1 160px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Hide label text (it's a bare text node inside <label>) while keeping input */
+.at-row label.at-text {
+    display: block !important;
+    font-size: 0 !important;
+}
+
+/* Restore font size on the input inside the label */
+.at-row label.at-text input[type="text"],
+.at-row label.at-text input[type="email"] {
+    font-size: 16px !important;
     width: 100% !important;
     box-sizing: border-box !important;
+    display: block !important;
 }
 
-/* Submit button: keep it inline with the fields, sized to its content */
-.at-submit,
-.at-form .at-submit,
-input[type="submit"],
-button[type="submit"] {
+/* Submit container: shrink to fit, stay inline */
+.at-form-submit {
     flex: 0 0 auto !important;
     margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Submit button */
+.at-form-submit input[type="submit"],
+.at-form-submit button[type="submit"],
+input.at-submit,
+button.at-submit {
+    flex: 0 0 auto !important;
     white-space: nowrap !important;
+    margin: 0 !important;
+}
+
+/* Suppress EveryAction's default full-width button rule */
+.at-form-submit,
+.at-form-submit * {
+    width: auto !important;
 }
