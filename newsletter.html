@@ -2,9 +2,17 @@
 layout: default
 title: Newsletter
 ---
+<div class="nl-hero">
+	<div class="nl-hero-text">
+		<h1 class="nl-hero-title">Newsletter</h1>
+	</div>
+	<div class="nl-hero-image">
+		<img src="{{ site.baseurl }}/assets/images/newsletter-hero.png" alt="">
+	</div>
+</div>
+
 <section>
 	<div class="container">
-		<h2>Newsletter</h2>
 		{% if site.posts.size > 0 %}
 			<div class="newsletter-feed">
 				{% for post in site.posts %}
