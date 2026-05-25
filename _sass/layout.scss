@@ -12,7 +12,7 @@ header {
 	background-image: url('/assets/images/banner-map.png');
 	background-size: cover;
 	background-position: center;
-	padding: 70px 0;
+	padding: 110px 0 70px;
 
 	h2, h3 {
 		color: white;
@@ -29,22 +29,17 @@ header {
 	}
 }
 
-header, nav {
-	.container {
-		padding-top: 0;
-		padding-bottom: 0;
-	}
-}
-
 nav {
-	background: $navy;
-	padding: 18px 0;
-
-	.container {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
+	background: transparent;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 100;
+	padding: 24px 64px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 
 	a {
 		text-decoration: none;
@@ -53,59 +48,47 @@ nav {
 	.nav-brand {
 		display: flex;
 		align-items: center;
-		gap: 14px;
+		gap: 5px;
 
 		.nav-logo-img {
 			width: 42px;
 			height: 42px;
 			object-fit: contain;
 			display: block;
+			margin-right: 8px;
 		}
 
-		.nav-separator {
-			width: 1px;
+		.nav-separator-img {
 			height: 42px;
-			background: rgba(255, 255, 255, 0.35);
-			flex-shrink: 0;
-		}
-
-		.nav-brand-text {
-			display: flex;
-			flex-direction: column;
-			gap: 2px;
+			width: auto;
+			display: block;
+			margin: 0 6px;
 		}
 
 		.nav-brand-name {
 			font-family: 'Montserrat', sans-serif;
 			font-weight: 700;
-			font-size: 26px;
+			font-size: 40px;
 			letter-spacing: -0.2px;
 			color: #fff;
 			line-height: 1;
-		}
-
-		.nav-brand-location {
-			font-family: 'Montserrat', sans-serif;
-			font-weight: 700;
-			font-size: 18px;
-			letter-spacing: -0.2px;
-			color: rgba(255, 255, 255, 0.85);
-			line-height: 1;
+			white-space: nowrap;
 		}
 	}
 
 	.nav-links {
 		display: flex;
 		align-items: center;
-		gap: 25px;
+		gap: 30px;
 
 		a {
 			font-family: 'Montserrat', sans-serif;
-			font-weight: 500;
+			font-weight: 900;
 			font-size: 18px;
 			letter-spacing: -0.09px;
 			color: rgba(255, 255, 255, 0.9);
 			text-decoration: none;
+			text-transform: uppercase;
 
 			&:hover {
 				color: #fff;
