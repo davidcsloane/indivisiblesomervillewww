@@ -61,7 +61,7 @@ everyaction_signup_url: "https://secure.everyaction.com/p/Rw74aDS6HEybcsFa2o9pcw
 everyaction_volunteer_form_url: "https://secure.everyaction.com/v1/Forms/oSZ11hIYTEaBjlYhMP_MEQ2"
 # Newsletter signup (shorter: Name / Email / Interest) — used in the homepage hero.
 # Swap this once the simpler form is configured in EveryAction.
-everyaction_newsletter_form_url: "https://secure.everyaction.com/v1/Forms/oSZ11hIYTEaBjlYhMP_MEQ2"
+everyaction_newsletter_form_url: "https://secure.ngpvan.com/v1/Forms/xjgQj1KNQ0GHRtX25WC_8w2"
 
 plugins:
   - jekyll-sitemap

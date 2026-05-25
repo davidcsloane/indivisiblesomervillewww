@@ -1378,16 +1378,100 @@ blockquote {
 		font-family: 'Montserrat', sans-serif !important;
 	}
 
-	// Hide EA's own heading/branding/header if present
-	.at .HeaderHtml,
+	// Hide EA chrome: title bar, header/footer markup, FastAction widget,
+	// "Remember me" checkbox, error console, form footer
+	.at header.at-title,
+	.at .at-title,
+	.at .at-markup.HeaderHtml,
+	.at .at-markup.FooterHtml,
+	.at .at-markup.FastAction,
+	.at .fastaction-block,
+	.at [class*="fastaction"],
+	.at [class*="FastAction"],
+	.at .at-row.UpdateMyProfile,
+	.at .at-mode-person-only,
+	.at [data-subview],
+	.at .at-error-console,
 	.at-form-header,
 	.at-legend,
 	.at-form-section-header,
-	.at-markup-NewsletterSubscriptionForm__intro {
+	footer.form-footer.at,
+	.form-footer {
 		display: none !important;
 	}
 
-	// Style every input/select like a clean pill
+	// Horizontal layout: form.clearfix is the <form> element
+	// Kill the clearfix ::after so it doesn't become a rogue flex item
+	.at form::before,
+	.at form::after {
+		display: none !important;
+	}
+
+	.at form {
+		display: flex !important;
+		flex-direction: row !important;
+		flex-wrap: nowrap !important;
+		align-items: center !important;
+		gap: 12px !important;
+	}
+
+	// Fieldset grows to fill remaining space; strip default border/padding/min-width
+	.at fieldset.at-fieldset {
+		flex: 1 1 auto !important;
+		border: none !important;
+		padding: 0 !important;
+		margin: 0 !important;
+		min-width: 0 !important;
+		width: auto !important;
+	}
+
+	// .at-fields lays Name and Email side by side
+	.at .at-fields {
+		display: flex !important;
+		flex-direction: row !important;
+		flex-wrap: nowrap !important;
+		align-items: center !important;
+		gap: 12px !important;
+	}
+
+	// Whitelist: only show FirstName and EmailAddress rows; hide everything else
+	.at .at-row {
+		display: none !important;
+	}
+
+	.at .at-row.FirstName,
+	.at .at-row.EmailAddress {
+		display: flex !important;
+		flex: 1 1 160px !important;
+		margin: 0 !important;
+		padding: 0 !important;
+	}
+
+	// Hide label text nodes (bare text inside <label>) while keeping the input
+	.at .at-row label.at-text {
+		display: block !important;
+		font-size: 0 !important;
+		margin: 0 !important;
+	}
+
+	// Submit container stays auto-width, sits inline with the fieldset
+	.at .at-form-submit {
+		flex: 0 0 auto !important;
+		margin: 0 !important;
+		padding: 0 !important;
+		width: auto !important;
+		float: none !important;
+	}
+
+	// Override EA's float:right on the submit button itself
+	.at .at-form-submit .at-submit,
+	.at .at-form-submit input[type="submit"] {
+		float: none !important;
+		margin: 0 !important;
+		display: block !important;
+	}
+
+	// Style every input
 	.at input[type="text"],
 	.at input[type="email"],
 	.at input[type="tel"],
@@ -1405,6 +1489,7 @@ blockquote {
 		width: 100% !important;
 		height: auto !important;
 		line-height: 1.3 !important;
+		box-sizing: border-box !important;
 	}
 
 	.at input:focus,
@@ -1415,18 +1500,7 @@ blockquote {
 		box-shadow: 0 0 0 3px rgba(53, 126, 30, 0.15) !important;
 	}
 
-	// Labels
-	.at label,
-	.at .at-form-label {
-		font-family: 'Montserrat', sans-serif !important;
-		font-size: 14px !important;
-		font-weight: 600 !important;
-		color: #333 !important;
-		text-transform: none !important;
-		margin-bottom: 6px !important;
-	}
-
-	// Submit button — match Figma green
+	// Submit button — green, uppercase, Montserrat
 	.at input[type="submit"],
 	.at button[type="submit"],
 	.at .at-submit,
@@ -1444,17 +1518,13 @@ blockquote {
 		border-radius: 8px !important;
 		cursor: pointer !important;
 		box-shadow: none !important;
+		white-space: nowrap !important;
+		width: auto !important;
 		transition: background 150ms ease !important;
 
 		&:hover {
 			background: #2a6518 !important;
 		}
-	}
-
-	// Tighten EA's default spacing
-	.at .at-row,
-	.at .at-fieldset {
-		margin-bottom: 12px !important;
 	}
 }
 
