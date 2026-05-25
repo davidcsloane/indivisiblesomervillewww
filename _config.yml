@@ -56,6 +56,13 @@ defaults:
 actblue_url: "https://secure.actblue.com/donate/indivisiblesom1336255410"
 everyaction_signup_url: "https://secure.everyaction.com/p/Rw74aDS6HEybcsFa2o9pcw2"
 
+# EveryAction NGP form embeds.
+# Volunteer form (full signup with address, etc.) — used on /volunteers.
+everyaction_volunteer_form_url: "https://secure.everyaction.com/v1/Forms/oSZ11hIYTEaBjlYhMP_MEQ2"
+# Newsletter signup (shorter: Name / Email / Interest) — used in the homepage hero.
+# Swap this once the simpler form is configured in EveryAction.
+everyaction_newsletter_form_url: "https://secure.everyaction.com/v1/Forms/oSZ11hIYTEaBjlYhMP_MEQ2"
+
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
