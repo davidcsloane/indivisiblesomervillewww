@@ -1,0 +1,39 @@
+/* Lay out Name, Email, and Submit on a single horizontal row.
+   EveryAction's at.js renders fields as .at-row inside a .at-fieldset,
+   with the submit button in its own row below. */
+
+.at-form,
+.at-fieldset,
+.ContactInformation {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    align-items: flex-end !important;
+    gap: 12px !important;
+}
+
+.at-form .at-row,
+.at-fieldset .at-row,
+.ContactInformation .at-row {
+    flex: 1 1 0 !important;
+    min-width: 180px !important;
+    margin: 0 !important;
+}
+
+/* Make sure inputs fill their flex column */
+.at-form .at-row input,
+.at-fieldset .at-row input,
+.ContactInformation .at-row input {
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Submit button: keep it inline with the fields, sized to its content */
+.at-submit,
+.at-form .at-submit,
+input[type="submit"],
+button[type="submit"] {
+    flex: 0 0 auto !important;
+    margin: 0 !important;
+    white-space: nowrap !important;
+}
