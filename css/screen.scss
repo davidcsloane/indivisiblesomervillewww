@@ -4,3 +4,7 @@
 @import "variables";
 @import "elements";
 @import "layout";
+
+header.nav {
+	background-image: url('{{ site.baseurl }}/assets/images/banner-map.png');
+}
