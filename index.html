@@ -2,12 +2,14 @@
 layout: default
 title: Indivisible Somerville
 ---
-<header>
+<header class="nav">
 	<div class="container">
-		<h1>When tyranny threatens one, it threatens us all</h1>
-		<p>Join our fight against tyranny. Become an Indivisible Somerville volunteer and add your name to the fight...</p>
+		<div class="hero-text">
+			<h1>When tyranny threatens one, it threatens us all</h1>
+			<p>Join our fight against tyranny.
+			Become an Indivisible Somerville volunteer and add your name to the fight...</p>
+		</div>
 		<div class="hero-signup">
-			<p class="hero-signup-text">Join us in the fight against tyranny. Become an Indivisible Somerville volunteer.</p>
 			<div class="signup-form-wrapper">
 				<div class="ngp-form"
 					data-form-url="{{ site.everyaction_newsletter_form_url }}"
@@ -21,48 +23,38 @@ title: Indivisible Somerville
 	</div>
 </header>
 
-<div class="container">
-	<div class="about-split">
-		<div class="about-photos">
-			<div class="photo-top-row">
-				<img src="{{ site.baseurl }}/assets/images/about-1.jpg" alt="Indivisible Somerville at a protest">
-				<img src="{{ site.baseurl }}/assets/images/about-2.jpg" alt="Rally with raised fists">
-			</div>
-			<div class="photo-bottom-row">
-				<img src="{{ site.baseurl }}/assets/images/about-3.jpg" alt="Somerville city scene">
-			</div>
-		</div>
-		<div class="about-text">
-			<h2 class="about-heading">Indivisible in Somerville</h2>
-			<p>Indivisible is a grassroots movement of thousands of local activist groups with a mission to elect progressive leaders, rebuild our democracy, and defeat the Trump agenda.</p>
-			<p>Indivisible Somerville is the local chapter of Indivisible based in Somerville, MA. We are a group of volunteers focusing on electoral campaigns, trainings, and direct actions at the national stage.</p>
-			<p>Interested in becoming a volunteer/member of Indivisible Somerville? We invite you to fill out the volunteering form at the top. Check out our <a href="{{ site.baseurl }}/volunteers/">volunteering page</a> for more information.</p>
-		</div>
-	</div>
-</div>
-
-<div class="since-fall">
+<section id="about">
 	<div class="container">
-		<h2 class="since-fall-title">Since Fall 2025</h2>
-		<div class="since-fall-stats">
-			<div class="stat">
-				<img src="{{ site.baseurl }}/assets/images/icon-trainings.png" alt="">
-				<div class="stat-number">30+</div>
-				<div class="stat-label">Trainings<br>Offered</div>
+		<div class="about-split">
+			<div class="about-photos">
+				<div class="photo-top-row">
+					<img src="{{ site.baseurl }}/assets/images/stopthesteal_rwkl.png" 
+						width="173px"
+						height="300px"
+						alt="Indivisible Somerville at Stop the Steal protest">
+					<img src="{{ site.baseurl }}/assets/images/protest_generic.webp" 
+						width="200px"
+						height="300px"
+						alt="Rally with engaged protestors raising fists in resistance">
+				</div>
+				<div class="photo-bottom-row">
+					<img src="{{ site.baseurl }}/assets/images/handsoff.avif" 
+						height="380px"
+						alt="a scene of Boston City Hall during the Hands Off protest">
+				</div>
 			</div>
-			<div class="stat">
-				<img src="{{ site.baseurl }}/assets/images/icon-members.png" alt="">
-				<div class="stat-number">100+</div>
-				<div class="stat-label">Member<br>Sign-Ups</div>
-			</div>
-			<div class="stat">
-				<img src="{{ site.baseurl }}/assets/images/icon-events.png" alt="">
-				<div class="stat-number">12</div>
-				<div class="stat-label">Events<br>Organized</div>
+			<div class="about-text">
+				<h2 class="about-heading">Indivisible in Somerville, MA</h2>
+				<p>Indivisible is a grassroots movement of thousands of local activist groups with a mission to elect progressive leaders, rebuild our democracy, and defeat the Trump agenda.</p>
+				<p>Indivisible Somerville is the local chapter of Indivisible based in Somerville, MA. We are a group of volunteers focusing on electoral campaigns, trainings, and direct actions at the national stage.</p>
+				<p>Interested in becoming a volunteer/member of Indivisible Somerville? We invite you to fill out the volunteering form at the top. 
+					{% if site.version > 1 %}
+				   Check out our <a href="{{ site.baseurl }}/volunteers/">volunteering page</a> for more information.</p>
+				   {% endif %}
 			</div>
 		</div>
 	</div>
-</div>
+</section>
 
 <div class="upcoming-events">
 	<div class="container">

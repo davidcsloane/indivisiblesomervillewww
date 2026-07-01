@@ -1,102 +1,51 @@
-/* EveryAction inline form — horizontal layout + cleanup
-   Uploaded to EveryAction blob storage as CustomCssUrl.
-   Applies on both the standalone form page and via at.js embed. */
+/* EveryAction inline form — vertical layout, uploaded to EveryAction as CustomCssUrl */
 
-/* --- Hide unwanted chrome --- */
-header.at-title,
-.at-title { display: none !important; }
-
-.at-markup.HeaderHtml,
-.at-markup.FooterHtml,
-footer.at-markup.FooterHtml { display: none !important; }
-
-/* FastAction autofill "Not [name]?" widget */
-.at-markup.FastAction,
-.fastaction-block { display: none !important; }
-
-/* "Update my profile" checkbox row */
-.at-row.UpdateMyProfile,
-.at-mode-person-only { display: none !important; }
-
+/* Hide error console */
 .at-error-console { display: none !important; }
 
-footer.form-footer.at,
-.form-footer { display: none !important; }
-
-/* Fieldset legend */
-.at-fieldset legend,
-.at-legend { display: none !important; }
-
-/* --- Horizontal layout --- */
-
-/* form.clearfix is the real <form> element — make it a flex row */
-form.clearfix {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: wrap !important;
-    align-items: flex-end !important;
-    gap: 12px !important;
-}
-
-/* Fieldset grows to fill space; strip border/padding EveryAction adds */
-fieldset.at-fieldset {
-    flex: 1 1 auto !important;
-    border: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    min-width: 0 !important;
-}
-
-/* .at-fields is the div that wraps the individual field rows */
-.at-fields {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: wrap !important;
-    align-items: flex-end !important;
-    gap: 12px !important;
-}
-
-/* Each field: grow equally, minimum so they wrap on small screens */
-.at-row {
-    flex: 1 1 160px !important;
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-/* Hide label text (it's a bare text node inside <label>) while keeping input */
-.at-row label.at-text {
-    display: block !important;
-    font-size: 0 !important;
-}
-
-/* Restore font size on the input inside the label */
-.at-row label.at-text input[type="text"],
-.at-row label.at-text input[type="email"] {
+/* Style inputs */
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
     font-size: 16px !important;
+    padding: 11px 14px !important;
+    border: 1px solid #d4d8dd !important;
+    border-radius: 8px !important;
+    background: #fff !important;
+    color: #333 !important;
+    box-shadow: none !important;
     width: 100% !important;
     box-sizing: border-box !important;
-    display: block !important;
 }
 
-/* Submit container: shrink to fit, stay inline */
-.at-form-submit {
-    flex: 0 0 auto !important;
-    margin: 0 !important;
-    padding: 0 !important;
+input[type="text"]:focus,
+input[type="email"]:focus {
+    border-color: #357e1e !important;
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(53, 126, 30, 0.15) !important;
 }
 
 /* Submit button */
-.at-form-submit input[type="submit"],
-.at-form-submit button[type="submit"],
-input.at-submit,
+input[type="submit"],
+button[type="submit"],
+.at-submit,
 button.at-submit {
-    flex: 0 0 auto !important;
+    background: #357e1e !important;
+    color: #fff !important;
+    font-weight: 700 !important;
+    font-size: 15px !important;
+    letter-spacing: 0.04em !important;
+    text-transform: uppercase !important;
+    padding: 11px 28px !important;
+    border: none !important;
+    border-radius: 8px !important;
+    cursor: pointer !important;
     white-space: nowrap !important;
-    margin: 0 !important;
+    transition: background 150ms ease !important;
 }
 
-/* Suppress EveryAction's default full-width button rule */
-.at-form-submit,
-.at-form-submit * {
-    width: auto !important;
+input[type="submit"]:hover,
+button[type="submit"]:hover,
+.at-submit:hover {
+    background: #2a6518 !important;
 }
