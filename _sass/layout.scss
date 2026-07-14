@@ -661,6 +661,58 @@ blockquote {
 	}
 }
 
+#upcoming-events {
+	padding: 0px;
+
+	.oa-page {
+		background-color: #eee;
+		padding-top: 30px;
+
+		h1 {
+			font-family: "Montserrat", sans-serifsans-serif;
+			font-weight: 900;
+			font-size: 30px;
+			color: #345067;
+		}
+	}
+	.oa-event-list-container {
+		form {
+			    margin: 0 auto;
+				max-width: 800px;
+		}
+
+		.oa-input-container {
+			.oa-input-unit:has(#EventListSubmit) {
+				width: 100%;
+				display: flex;
+				justify-content: flex-end;
+				padding-right: 10px;
+			}
+			
+		}
+	}
+
+
+	#EventListSubmit {
+		background: #357e1e !important;
+		color: white;
+		font-family: "Montserrat", sans-serif !important;
+		font-weight: 700 !important;
+		font-size: 13px !important;
+		letter-spacing: 0;
+		text-transform: uppercase !important;
+		padding: 3px 20px !important;
+		border: none !important;
+		border-radius: 6px !important;
+		cursor: pointer !important;
+		box-shadow: none !important;
+		white-space: nowrap !important;
+		width: auto !important;
+		transition: background 150ms ease !important;
+	}
+
+}
+
 .about-photos {
 	display: flex;
 	flex-direction: column;
