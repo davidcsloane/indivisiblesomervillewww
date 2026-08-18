@@ -247,12 +247,12 @@ blockquote {
 .site-footer {
 	background: $navy;
 	color: #fff;
-	padding: 70px 30px 30px;
+	padding: 40px 0px 40px;
 	position: relative;
 	overflow: hidden;
 
 	.footer-inner {
-		max-width: 900px;
+		max-width: 100%;
 		margin: 0 auto;
 		position: relative;
 		z-index: 2;
@@ -262,7 +262,7 @@ blockquote {
 	.footer-title {
 		font-family: 'Montserrat', sans-serif;
 		font-weight: 900;
-		font-size: 60px;
+		font-size: 95px;
 		color: #fff;
 		letter-spacing: 0;
 		line-height: 1;
@@ -1598,6 +1598,58 @@ section.fastaction-modal  {
 			}
 		}
 	}
+}
 
+footer {
+	.footer-background {
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		opacity: 0.3;
+		width: 481px;
+		height: 100%;
+		
+		img {
+			object-fit: cover;
+		}
 
+		.footer-bg-gradient {
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 481px;
+			height: 100%;
+			background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 481 724' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%' width='100%' fill='url(%23grad)' opacity='1'/><defs><linearGradient id='grad' gradientUnits='userSpaceOnUse' x1='-10' x2='10' y1='0' y2='0' gradientTransform='matrix(24.05 -2.2166e-15 3.007e-15 15.978 240.5 362)'><stop stop-color='rgba(0,0,0,0)' offset='0.56731'/><stop stop-color='rgba(26,40,52,0.5)' offset='0.78365'/><stop stop-color='rgba(39,60,77,0.75)' offset='0.89183'/><stop stop-color='rgba(52,80,103,1)' offset='1'/></linearGradient></defs></svg>");
+		}
+	}
+
+	.footer-inner {
+		h2.footer-title {
+			font-family: "Montserrat", sans-serif;
+			font-weight: 900;
+			font-size: 90px;
+			color: #fff;
+			letter-spacing: 0;
+			line-height: 1;
+			margin: 0 0 18px;
+			text-align: center;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 6px;
+
+			width: 100%;
+			overflow: clip;
+			flex-wrap: nowrap;
+			opacity: 0.5;
+
+			img {
+				    margin-left: -80px;
+					z-index: -99;
+					width: 150px;
+					margin-top: 30px;
+					margin-right: -18px;
+			}
+		}
+	}
 }
