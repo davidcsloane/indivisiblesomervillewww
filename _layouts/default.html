@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		{% seo %}
+
+		<link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;700&family=Montserrat:wght@500;700;900&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+
+		<link rel='preload' href='https://static.everyaction.com/ea-actiontag/at.js' as='script' crossorigin='anonymous'>
+		<link rel='preload' href='https://static.everyaction.com/ea-actiontag/at.min.css' as='style'>
+		<script type='text/javascript' src='https://static.everyaction.com/ea-actiontag/at.js' crossorigin='anonymous'></script>
+		<link rel="stylesheet" href="{{ site.baseurl }}/css/screen.css">
+		<link rel="apple-touch-icon" sizes="180x180" href="{{ site.baseurl }}/apple-touch-icon.png">
+		<link rel="icon" type="image/x-icon" href="{{ site.baseurl }}/assets/images/favicon.ico">
+
+		{% if jekyll.environment == 'production' and site.google_analytics_key != '' %}
+			<script>
+				window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+				ga('create', '{{ site.google_analytics_key }}', 'auto');
+				ga('send', 'pageview');
+			</script>
+			<script async src='https://www.google-analytics.com/analytics.js'></script>
+		{% endif %}
+	</head>
+	<body>
+		<nav>
+			<a href="{{ site.baseurl }}">{% include logo.html %}</a>
+			<div class="nav-links">
+				<!--<a href="{{ site.baseurl }}/volunteers">Volunteers</a> -->
+				<a href="https://www.mobilize.us/indivisiblesomerville/">Events</a>
+				<!--<a href="{{ site.baseurl }}/newsletter">Newsletter</a>-->
+				<a class="nav-donate" href="https://secure.actblue.com/donate/indivisiblesom1336255410">Donate</a>
+			</div>
+		</nav>
+		<div class="content">
+			{{ content }}
+		</div>
+		<footer class="site-footer">
+			<div class="footer-background">
+				<img src="{{ site.baseurl}}/assets/images/footer-bg.png" alt="" class="footer-bg-img" />
+				<div class="footer-bg-gradient"></div>
+			</div>
+			<div class="footer-inner">
+
+				<h2 class="footer-title">
+					<span class="footer-title-word">INDIVISIBLE</span>
+					<img src="{{ site.baseurl }}/assets/images/nav-separator.png" alt="" class="nav-separator-img" aria-hidden="true">
+					<span class="footer-title-word">SOMERVILLE</span>
+				</h2>
+				<p class="footer-sub">Follow us on social media or subscribe to our newsletter</p>
+
+				<div class="footer-socials">
+					<a class="footer-social-icon" href="https://www.mobilize.us/indivisiblesomerville/" aria-label="Mobilize">
+						<img src="{{ site.baseurl }}/assets/images/icon-mobilize.svg" />
+					</a>
+					<a class="footer-social-icon" href="https://www.instagram.com/{{ site.data.company.instagram }}" aria-label="Instagram">
+						{% include icons/social-media.html social_icon="instagram" %}
+					</a>
+					<a class="footer-social-icon" href="https://www.facebook.com/{{ site.data.company.facebook }}" aria-label="Facebook">
+						{% include icons/social-media.html social_icon="facebook" %}
+					</a>
+					<a class="footer-social-icon" href="https://bsky.app/profile/{{ site.data.company.bluesky }}" aria-label="Bluesky">
+						{% include icons/social-media.html social_icon="bluesky" %}
+					</a>
+					<a class="footer-social-icon" href="mailto:{{ site.data.company.email }}" aria-label="Email">
+						{% include icons/social-media.html social_icon="email" %}
+					</a>
+				</div>
+
+				<div class="site-map">
+					<h3 class="site-map-title">SITE MAP</h3>
+					<div class="site-map-cols">
+						<div class="site-map-col">
+							<a href="{{ site.actblue_url }}">DONATE</a>
+							<!--<a href="{{ site.baseurl }}/newsletter">NEWSLETTER</a> -->
+							<a href="mailto:{{ site.data.company.email }}">CONTACT US</a>
+						</div>
+						<div class="site-map-col">
+							<!-- <a href="https://www.mobilize.us/indivisiblesomerville/">EVENTS</a> -->
+							<!--<a href="{{ site.baseurl }}/volunteers">VOLUNTEER</a> -->
+							<a href="https://indivisible-ma.org/">INDIVISIBLE MASS COALITION</a>
+							<!-- <a href="#">RESOURCES</a> -->
+						</div>
+					</div>
+				</div>
+
+				<p class="footer-cc">
+					<svg class="cc-mark" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+						<circle cx="12" cy="12" r="11" fill="none" stroke="currentColor" stroke-width="1.5"/>
+						<text x="12" y="16" text-anchor="middle" font-family="serif" font-size="11" font-weight="bold" fill="currentColor">cc</text>
+					</svg>
+					Creative Commons BY-NC - Indivisible Somerville, a local chapter of Indivisible.
+				</p>
+			</div>
+		</footer>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			$('a[href*=\\#]').on('click', function(event){
+				var el = $(this.hash);
+				if (el.length > 0) {
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
+				}
+			});
+		</script>
+	</body>
+</html>

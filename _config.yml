@@ -1,5 +1,87 @@
-url: "https://www.indivisiblesomerville.org"
+# ----
+# Site
 
-exclude: 
-  - "indextest.html"
-  - "readme.md"
+title: Indivisible Somerville
+url: https://www.indivisiblesomerville.org
+version: 1.0
+baseurl: 
+google_analytics_key: 
+
+# Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
+logo: /assets/images/is_ind_logo.png
+description: Indivisible Somerville is an activist group based in Somerville, Massachusetts, working to support democracy and oppose authoritarianism. Join us!
+author:
+  name: Indivisible Somerville
+  email: info@indivisiblesomerville.org
+social:
+  name: Indivisible Somerville
+  links:
+    - https://bsky.app/profile/indivisiblesville.bsky.social
+    - https://www.facebook.com/Indivisiville
+    - https://www.instagram.com/indivisiblesomerville_v2.0
+
+# -----
+# Build
+
+timezone: Etc/UTC
+
+collections:
+  staff_members:
+    _icon: account_circle
+    _hide_content: true
+    _options:
+      image:
+        width: 250
+        height: 250
+
+permalink: pretty
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      _options:
+        content:
+          width: 1880
+          height: 1880
+          uploads_dir: "/images/posts/"
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
+
+actblue_url: "https://secure.actblue.com/donate/indivisiblesom1336255410"
+everyaction_signup_url: "https://secure.everyaction.com/p/Rw74aDS6HEybcsFa2o9pcw2"
+
+# EveryAction NGP form embeds.
+# Volunteer form (full signup with address, etc.) — used on /volunteers.
+everyaction_volunteer_form_url: "https://secure.everyaction.com/v1/Forms/oSZ11hIYTEaBjlYhMP_MEQ2"
+# Newsletter signup (shorter: Name / Email / Interest) — used in the homepage hero.
+# Swap this once the simpler form is configured in EveryAction.
+everyaction_newsletter_form_url: "https://secure.ngpvan.com/v1/Forms/xjgQj1KNQ0GHRtX25WC_8w2"
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - readme.md
+  - LICENSE
+  - CLAUDE.md
+
+# -----------
+# CloudCannon
+
+_options:
+  header_background_image:
+    width: 1880
+    height: 1880
+  newsletter_background_image:
+    width: 1880
+    height: 1880

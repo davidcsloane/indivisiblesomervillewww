@@ -1,0 +1,51 @@
+/* EveryAction inline form — vertical layout, uploaded to EveryAction as CustomCssUrl */
+
+/* Hide error console */
+.at-error-console { display: none !important; }
+
+/* Style inputs */
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+    font-size: 16px !important;
+    padding: 11px 14px !important;
+    border: 1px solid #d4d8dd !important;
+    border-radius: 8px !important;
+    background: #fff !important;
+    color: #333 !important;
+    box-shadow: none !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus {
+    border-color: #357e1e !important;
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(53, 126, 30, 0.15) !important;
+}
+
+/* Submit button */
+input[type="submit"],
+button[type="submit"],
+.at-submit,
+button.at-submit {
+    background: #357e1e !important;
+    color: #fff !important;
+    font-weight: 700 !important;
+    font-size: 15px !important;
+    letter-spacing: 0.04em !important;
+    text-transform: uppercase !important;
+    padding: 11px 28px !important;
+    border: none !important;
+    border-radius: 8px !important;
+    cursor: pointer !important;
+    white-space: nowrap !important;
+    transition: background 150ms ease !important;
+}
+
+input[type="submit"]:hover,
+button[type="submit"]:hover,
+.at-submit:hover {
+    background: #2a6518 !important;
+}
